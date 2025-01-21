@@ -1,4 +1,4 @@
-const { getUniqAttributePayload, extractQrCodeSrc } = require("../lib/utils/utils");
+const { getUniqAttributePayload, extractQrCodeSrc } = require("../utils/utils");
 
 const payload = {
     name: "name", sexe: "sexe", notUniqueAttribute: "notUniqueAttribute",

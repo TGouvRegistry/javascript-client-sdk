@@ -21,6 +21,26 @@ const getUniqAttributePayload = (payload, uniqAttributes) => {
 };
 
 /**
+ * @param {Object} payload
+ * @param {string[]} uniqAttributes
+ * @returns {Object}
+ */
+
+const getUniqAttributePayloadFromArray = (payload, uniqAttributes) => {
+    // check if payload object contains fields and check if attributes is a string
+
+    if (!payload || typeof payload !== "object" || !uniqAttributes || !Array.isArray(uniqAttributes)) {
+        return null;
+    }
+
+    const uniqAttributePayload = {};
+    uniqAttributes.forEach((attribute) => {
+        uniqAttributePayload[`${attribute}`] = payload[attribute];
+    });
+    return uniqAttributePayload;
+};
+
+/**
  * @param {string} htmlString
  */
 
@@ -38,5 +58,6 @@ const extractQrCodeSrc = (htmlString) => {
 
 module.exports = {
     getUniqAttributePayload,
+    getUniqAttributePayloadFromArray,
     extractQrCodeSrc,
 };
