@@ -25,8 +25,10 @@ const executor = new GouvRegistryCertificateExecutorV2({
     },
     templateUrl: null,
     qrCodeOnly: false,
-    width: 400,
-    height: 400,
+    qrCode: {
+        width: "15",
+        height: "15", 
+    }
     format: "pdf",
 
     registryHost: "http://127.0.0.1:3002/api/v1",
@@ -37,6 +39,7 @@ executor.execute().then((certificate) => {
 }).catch();
 
 ```
+The height is not actually used by the system.
 
 Old Version
 
